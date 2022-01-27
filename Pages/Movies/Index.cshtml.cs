@@ -1,6 +1,4 @@
 ﻿#nullable disable
-using dsd03Razor2020Assessment.Models;
-
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,8 +17,7 @@ namespace dsd03Razor2020Assessment.Pages.Movies
 
         }
 
-        public IList<Movie> Movie { get; set; }
-
+        public IList<Models.Movie> Movie { get; set; }
 
 
         public async Task OnGetAsync()
