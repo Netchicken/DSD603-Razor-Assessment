@@ -17,6 +17,7 @@ namespace dsd03Razor2020Assessment.Pages
         }
 
         public IReadOnlyList<MovieInfo> Results { get; set; }
+        public Models.Movie Movie { get; set; }
 
         public async Task OnGetAsync()
         {
@@ -32,5 +33,18 @@ namespace dsd03Razor2020Assessment.Pages
             Results = response.Results;
 
         }
+
+        //public async Task<IActionResult> OnPostAsync()
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return Page();
+        //    }
+
+        //    _context.Movie.Add(Movie);
+        //    await _context.SaveChangesAsync();
+
+        //    return RedirectToPage("./Index");
+        //}
     }
 }

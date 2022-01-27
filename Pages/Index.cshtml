@@ -27,7 +27,12 @@
   <div class="card-body">
     <h5 class="card-title">@item.Title</h5>
     <p class="card-text"> @item.Overview</p>
-    <a href="#" class="btn btn-primary">Watch  </a>
+    <p class="card-text"> @item.ReleaseDate</p>
+   @* <a asp-page="/Movies/Create" class="btn btn-primary">Watch  </a>*@
+
+   
+
+
   </div>
 </div>
 
@@ -38,3 +43,28 @@
 </div>
 </div>
 @*</div>*@
+
+
+
+ @*<form method="post">
+                     <div class="form-group">
+                               <input asp-for="Movie.Title" class="form-control" value="@item.Title"/>
+                           </div>
+            <div class="form-group">
+                               <input asp-for="Movie.ReleaseDate" class="form-control" value="@item.ReleaseDate" />
+                           </div>
+             <div class="form-group">
+              
+                <input asp-for="Movie.Overview" class="form-control" value="@item.Overview" />
+                           </div>
+           @* <div class="form-group">
+                               <input asp-for="Movie.Genre" class="form-control" />
+                           </div>
+            <div class="form-group">
+                               <input asp-for="Movie.Price" class="form-control" />
+                           </div>*@
+          @*  <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+*@
