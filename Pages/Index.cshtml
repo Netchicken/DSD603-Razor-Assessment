@@ -6,65 +6,32 @@
     ViewData["Title"] = "Movie Database";
 }
 
-<h1>Movie Database</h1>
+<h2>Welcome to the Movie database</h2>
 
 
-<h3>Welcome to the Movie database</h3>
+<div class="container">
+    <div class="row">
+       
+        @foreach (var item in Model.Results)
+        {
 
-<p>To enter a Movie click  <a asp-page="/Movies/index">Movies</a>  </p>
+            var PosterPath = "https://image.tmdb.org/t/p/w200/" + @item.PosterPath;
 
-<p>To enter a Cast member click  <a asp-page="/Casts/index">Cast</a>  </p>
- <div class="container">
-<div class="row">
-@* <div class="col-sm-4">*@
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src=@PosterPath alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Title</h5>
+                    <p class="card-text"> @item.Overview</p>
+                    <p class="card-text"> @item.ReleaseDate</p>
+                    @* <a asp-page="/Movies/Create" class="btn btn-primary">Watch  </a>*@
 
-@foreach (var item in Model.Results) {
-
-    var PosterPath = "https://image.tmdb.org/t/p/w200/" + @item.PosterPath;
-
-    <div class="card"style="width: 18rem;">
-  <img class="card-img-top" src=@PosterPath alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">@item.Title</h5>
-    <p class="card-text"> @item.Overview</p>
-    <p class="card-text"> @item.ReleaseDate</p>
-   @* <a asp-page="/Movies/Create" class="btn btn-primary">Watch  </a>*@
-
-   
-
-
-  </div>
-</div>
-
-
-
-}
-
-</div>
-</div>
-@*</div>*@
-
-
-
- @*<form method="post">
-                     <div class="form-group">
-                               <input asp-for="Movie.Title" class="form-control" value="@item.Title"/>
-                           </div>
-            <div class="form-group">
-                               <input asp-for="Movie.ReleaseDate" class="form-control" value="@item.ReleaseDate" />
-                           </div>
-             <div class="form-group">
-              
-                <input asp-for="Movie.Overview" class="form-control" value="@item.Overview" />
-                           </div>
-           @* <div class="form-group">
-                               <input asp-for="Movie.Genre" class="form-control" />
-                           </div>
-            <div class="form-group">
-                               <input asp-for="Movie.Price" class="form-control" />
-                           </div>*@
-          @*  <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
             </div>
-        </form>
-*@
+
+        }
+
+    </div>
+</div>
+
+
+

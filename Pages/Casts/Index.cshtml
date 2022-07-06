@@ -5,25 +5,25 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Cast Member Table</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Create New Cast Member</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Cast[0].FirstName)
+               First Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Cast[0].LastName)
+               Last Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Cast[0].ScreenName)
+              Screen Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Cast[0].Movie)
+               Movie Title
             </th>
             <th></th>
         </tr>
