@@ -48,6 +48,13 @@ namespace dsd03Razor2020Assessment.Pages.Movies
 
             string posterPath = "";
             string backdropPath = "";
+
+            if (response == null || response.Results == null || response.Results.Count == 0)
+            {
+                return NotFound();
+            }
+
+
             foreach (MovieInfo info in response.Results)
             {
                 Console.WriteLine($"{info.Title} ({info.ReleaseDate}): {info.Overview}");

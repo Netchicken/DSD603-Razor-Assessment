@@ -16,7 +16,7 @@ namespace dsd03Razor2020Assessment.Pages
             _context = context;
         }
 
-        public IReadOnlyList<MovieInfo> Results { get; set; }
+        public IReadOnlyList<Movie> Results { get; set; }
         public Models.Movie Movie { get; set; }
 
         public async Task OnGetAsync()
@@ -28,7 +28,7 @@ namespace dsd03Razor2020Assessment.Pages
 
             //  ApiQueryResponse<Movie> response = await movieApi.GetLatestAsync("en");
             // ApiSearchResponse<Movie> response = await movieApi.GetUpcomingAsync();
-            ApiSearchResponse<MovieInfo> response = await movieApi.GetTopRatedAsync();
+            ApiSearchResponse<Movie> response = await movieApi.GetNowPlayingAsync();
 
             Results = response.Results;
 
