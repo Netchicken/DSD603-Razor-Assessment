@@ -1,13 +1,8 @@
 ﻿#nullable disable
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using dsd03Razor2020Assessment.Models;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using dsd03Razor2020Assessment.Data;
-using dsd03Razor2020Assessment.Models;
 
 namespace dsd03Razor2020Assessment.Pages.Movies
 {
@@ -27,6 +22,26 @@ namespace dsd03Razor2020Assessment.Pages.Movies
 
         [BindProperty]
         public Movie Movie { get; set; }
+
+
+
+        public void OnGet(string title, string releaseDate, string overview, string genre, decimal? price)
+        {
+            if (!string.IsNullOrEmpty(title))
+            {
+                Movie = new Movie
+                {
+                    Title = title,
+                    ReleaseDate = DateTime.TryParse(releaseDate, out var dt) ? dt : DateTime.Now,
+                    Overview = overview,
+                    Genre = genre,
+                    Price = price ?? 0
+                };
+            }
+        }
+
+
+
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()

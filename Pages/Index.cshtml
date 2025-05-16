@@ -23,7 +23,19 @@
                     <h5 class="card-title">@item.Title</h5>
                     <p class="card-text"> @item.Overview</p>
                     <p class="card-text"> @item.ReleaseDate</p>
-                     @*<a asp-page="/Movies/Create" class="btn btn-primary">Watch  </a>*@
+
+                    @*<div>
+                        <span>@movie.Title</span>
+                        <a asp-page="/Movies/Create"
+                           asp-route-title="@movie.Title"
+                           asp-route-releaseDate="@movie.ReleaseDate.ToString("yyyy-MM-dd")"
+                           asp-route-overview="@movie.Overview"
+                           asp-route-genre="@movie.Genre"
+                           asp-route-price="@movie.Price">
+                            Create in Local DB
+                        </a>
+                    </div>*@
+                    @*<a asp-page="/Movies/Create" class="btn btn-primary">Watch  </a>*@
 
                 </div>
             </div>

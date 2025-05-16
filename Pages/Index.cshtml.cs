@@ -6,13 +6,11 @@ using DM.MovieApi.MovieDb.Movies;
 using dsd03Razor2020Assessment.Data;
 
 using Microsoft.AspNetCore.Mvc.RazorPages;
-
 namespace dsd03Razor2020Assessment.Pages
 {
     public class IndexModel : PageModel
     {
         private readonly ApplicationDbContext _context;
-
         public IndexModel(ApplicationDbContext context)
         {
             _context = context;
@@ -43,6 +41,8 @@ namespace dsd03Razor2020Assessment.Pages
 
     }
 }
+
+
 //public async Task<IActionResult> OnPostAsync()
 //{
 //    if (!ModelState.IsValid)
