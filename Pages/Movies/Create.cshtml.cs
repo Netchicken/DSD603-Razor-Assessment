@@ -15,17 +15,17 @@ namespace dsd03Razor2020Assessment.Pages.Movies
             _context = context;
         }
 
-        public IActionResult OnGet()
-        {
-            return Page();
-        }
+        //public IActionResult OnGet()
+        //{
+        //    return Page();
+        //}
 
         [BindProperty]
         public Movie Movie { get; set; }
 
 
 
-        public void OnGet(string title, string releaseDate, string overview, string genre, decimal? price)
+        public void OnGet(string title, string releaseDate, string overview)
         {
             if (!string.IsNullOrEmpty(title))
             {
@@ -33,10 +33,12 @@ namespace dsd03Razor2020Assessment.Pages.Movies
                 {
                     Title = title,
                     ReleaseDate = DateTime.TryParse(releaseDate, out var dt) ? dt : DateTime.Now,
-                    Overview = overview,
-                    Genre = genre,
-                    Price = price ?? 0
+                    Overview = overview
                 };
+            }
+            else
+            {
+                Movie = new Movie();
             }
         }
 
