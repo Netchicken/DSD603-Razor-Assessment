@@ -26,7 +26,8 @@
 
                     <div>
                         <span>@item.Title</span>
-                        <a asp-page="/Movies/Create"
+                        <a class="btn btn-primary"
+                           asp-page="/Movies/Create"
                            asp-route-title="@item.Title"
                            asp-route-releaseDate="@item.ReleaseDate.ToString("yyyy-MM-dd")"
                            asp-route-overview="@item.Overview">                        
